@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://cdn.glitch.global/37089a58-93a4-4b6a-999a-4264d8fa0dd1/hello6.png?v=1695487475094" type="icon-x/image">
+        <title>Cloth Donation</title>
+        <style>
+            nav{
+            background-color: black; 
+            width:100vw;
+            height: 10vh;
+            top:0px;
+            left:0px;
+            position: fixed;
+            
+        }
+        .options{
+            color: white;
+            position: absolute;
+            right: 0px;
+            top:0px;
+            width:50vw;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        
+        }
+        .options li,.dona-btn a{
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+        .options li a:hover, .dona-btn  a:hover {
+            color: black;
+            background-color: white;
+            height: 9vh;
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+              
+        }
+        nav li{
+            list-style: none;
+        }
+        nav ul li a{
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .name{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            font-family: Lucida Calligraphy;
+            font-size: 30px;
+            
+        }
+        .name1{
+            color: red;
+
+        }
+        .name2{
+            color: white;
+        }
+        .name:hover{
+            transition: 1s;
+            font-size: 35px;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            
+        
+        }
+        
+        @media screen and (max-width:600px){
+            nav{
+                width:40vw;
+                height: 100vh;
+                left:0px;
+                top:0px;
+                
+                position: fixed;
+            }
+            nav ul{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                position: static;
+
+            }
+            .name{
+                background-color: rgb(0, 0, 0);
+                width: 100vw;
+                height: 10vh;
+                left: 0px;
+                top:0px;
+                position:absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                padding-left: 4vw;
+                
+            }
+            .name:hover{
+                transition: 1s;
+                font-size: 35px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                
+            
+            }
+            .options {
+                flex-direction: column;
+                left:0px;
+                top:0px;
+                width:100%;
+                height: 55vh;
+                margin-top: 7.5vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                
+            }
+            .dona-btn {
+                width:100vw;
+            }
+            .options li {
+                flex-direction: column;
+                width: 100%;  
+
+            }
+            .options li a:hover,.dona-btn a:hover{
+                width:100%;
+                border-radius: 0%;
+                
+            }
+            .drop{
+                width: 100%;
+                
+            }
+            .donation-content {
+                display: none;
+                position: absolute;
+                background-color: #686363;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                margin-top: 0px;
+                margin-right: -60px;
+            
+            }
+            
+        }
+        .dona-btn{
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+           
+        }
+        .dona-btn a{
+            width: 100%;
+            height: 100%;
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            background-color: rgb(0, 0, 0);
+            font-size: 20px;
+            text-decoration: none;
+                
+        }
+       .drop .donation-content {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+           
+        }    
+        .donation-content {
+            display: none;
+            position: absolute;
+            background-color: #686363;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: -20px;
+            margin-left: 30px;
+
+        }
+        .donation-content a {
+            float: none;
+            background-color: rgb(71, 67, 67);
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 19px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            
+        }  
+        
+        .donation-content a:hover{
+            color: black;
+            background-color: rgba(88, 81, 81, 0);
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .drop:hover .donation-content{
+            display: block;
+            
+        } 
+        .logod{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center; 
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            border: 1px solid white;
+                       
+        }
+
+
+
+
+
+
+
+            body{
+                padding:20px;
+            }
+            
+            h1,h4{
+                color:blue;
+            }
+            #img1{
+                height: 300px;
+                width: 400px;
+                float: left;
+                margin: 40px;
+                border: 2px solid black;
+                box-shadow: 3px 3px 30px black,3px 3px 30px black;
+            }
+            #img2{
+                height: 300px;
+                width: 400px;
+                float: right;
+                margin: 40px;
+                border: 2px solid black;
+                box-shadow: 3px 3px 30px black,3px 3px 30px black;
+            }
+            .quote{
+                color: red;
+                align-content: center;
+                font-family: 'Times New Roman', Times, serif;
+                margin: 60px;
+                padding-left: 20px;
+            }
+            .logo{
+                height: 80px;
+                width: 80px;
+                border: 2px solid black;
+                border-radius: 50%;
+                float: right;
+            }
+            .except_logo{
+                float: left;
+               
+                
+            }
+            .logo_body img{
+                height: 100px;
+                width:100px;
+                border-radius: 50%;
+                top:11vh;
+                right: 8px;
+                position: fixed;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <nav>
+                <ul>
+                    <li class="name"><span class="name1">HELPING</span> <span class="name2">HANDS</span><span class="name1">...</span></li>
+                    <div class="options">
+                        <li><a class="active" href="/helping_hands" target="_self" title="">Home</a></li>
+                        <li><a class="active" href="/about" target="_self" title="Know more About us">About</a></li>
+                        <div class="drop">
+                            <p class="dona-btn" ><a class="active" class="dona-btn-a" href="/types_of_Donations" target="_self" title="Different TYPES of Donations">Types</a></p>
+                            <div class="donation-content">
+                                <a href="/food_donation"><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_food_donation.jpg?v=1694599094278" class="logod">Food Donation</a>
+                                <a href="/cloth_donation"><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_cloth_donation.webp?v=1694598842130" class="logod">Cloth Donation</a>
+                                <a href="/organ_donation"><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_organ_donation.jpg?v=1694599088134" class="logod">Organ Donation</a>
+                                <a href="/blood_donation"><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_blood_donation.jpg?v=1694596273594" class="logod">Blood Donation</a>
+                                <a href="/plasma_donation" ><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_plasma_donation.jpg?v=1694599081633" class="logod">Plasma Donation</a>
+                                <a href="/hair_donation"><img src="https://cdn.glitch.global/37089a58-93a4-4b6a-999a-4264d8fa0dd1/logo_hair_donation2.jpg?v=1695488563831" class="logod">Hair Donation</a>
+                            </div>
+                        </div>
+                        <li><a class="active" href="/donate" target="_self" title="">Donate</a></li>
+                        <li><a class="active" href="/contact"target="_self" title="In order to Contact us">Contact</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div class="mid"></div>
+        
+
+        <!-- <img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_cloth_donation.webp?v=1694598842130" class="logo"> -->
+        <p class="except_logo">
+            <h1 class="quote">Be a cause of someone's happiness. Donate your old Clothes to NEEDY PEOPLE!!!...</h1>
+            <img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/cloth_donation1.jpg?v=1694598808867" id="img1">
+            <h1>What is Cloth Donation ??..</h1>
+            By donating your unwanted clothes to charity, you're not only helping the environment, you're also supporting brilliant causes. In fact, donated clothing is one of the biggest sources of funds raised by charities. The best part is that you can choose which charity you want to give that coat, dress or top to.
+            <h1>What is the importance of clothes donation?</h1>
+It's great for the planet
+
+That's a huge amount, especially as there's no need for any clothing or textiles to make its way into a bin. By donating your clothes instead, you can help fight landfill, reduce demand for resource-hungry new clothes, and have a real impact in making fashion more sustainable.
+<p>When we clean out our closets, we often find lots of clothes that haven’t been worn in quite some time, in fact, some items of clothing may still have the purchase tags attached! After hours of slaving away with coat-hangers and drawers, it’s time to finally pack up your unwanted clothes and send them away, but this time, instead of vouching for the rubbish bin, consider a clothing donation.
+
+    Donating clothing is becoming more common than ever before with people learning more about the what it means to support local charities or help those with less. If you’re wondering what donating your clothes can do for the world, take a look below;</p>
+
+<h4>It helps people who can’t afford clothes</h4>
+Donating to foundations or op-shops gives those who are homeless or unable to afford new clothes, a place to purchase preloved clothing at a discounted price. Many charities will use the revenue raised to give back to the community, continuing to help people in need. This can be through the training of new staff, employment for people with disabilities or supporting community projects and shelters.
+<img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/cloth_donation2.jpg?v=1694595798284" id="img2">
+<h4>It helps the environment</h4>
+Passing on your clothes to others means people will be less likely to buy new clothes. This means that the fast-fashion industry won’t need to mass produce copious amounts of clothing, saving the resources used to create new textiles. Did you know, every kilo of recycled clothing saves over 6000 litres of water in reproduction of cotton? It’s a simple as donating clothes to a charity or even passing clothes onto a younger family member.
+
+<h4>It helps disaster survivors</h4>
+Those who have recently suffered through a disaster such as bushfires, tsunamis, and cyclones, will need assistance in rebuilding their lives. Organisations such as the Red Cross and Salvation Army welcome donations to hand directly to those in need.
+
+When it comes to throwing away your clothes, stop and think about what your clothes can mean for someone else. Here at King Cotton, we work alongside various reputable charities to help make the world a better place. To find out more about what we do, take a look at Our Community!
+        </p>
+        <div >
+            <p class="logo_body"><img src="https://cdn.glitch.global/489ab3e0-0c44-419a-8e60-95d6a5c28b81/logo5.jpg?v=1695490454908" alt=""  >
+        </div>
+    </body>
+</html>

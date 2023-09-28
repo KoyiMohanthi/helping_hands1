@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.glitch.global/37089a58-93a4-4b6a-999a-4264d8fa0dd1/hello6.png?v=1695487475094" type="icon-x/image">
+    <title>Donation</title>
+    <style>
+        nav{
+            background-color: black; 
+            width:100vw;
+            height: 10vh;
+            top:0px;
+            left:0px;
+            position: fixed;
+            
+        }
+        .options{
+            color: white;
+            position: absolute;
+            right: 0px;
+            top:0px;
+            width:50vw;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        
+        }
+        .options li,.dona-btn a{
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+        .options li a:hover, .dona-btn  a:hover {
+            color: black;
+            background-color: white;
+            height: 9vh;
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+              
+        }
+        nav li{
+            list-style: none;
+        }
+        nav ul li a{
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .name{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            font-family: Lucida Calligraphy;
+            font-size: 30px;
+            
+        }
+        .name1{
+            color: red;
+
+        }
+        .name2{
+            color: white;
+        }
+        .name:hover{
+            transition: 1s;
+            font-size: 35px;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            
+        
+        }
+        
+        @media screen and (max-width:600px){
+            nav{
+                width:40vw;
+                height: 100vh;
+                left:0px;
+                top:0px;
+                
+                position: fixed;
+            }
+            nav ul{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                position: static;
+
+            }
+            .name{
+                background-color: rgb(0, 0, 0);
+                width: 100vw;
+                height: 10vh;
+                left: 0px;
+                top:0px;
+                position:absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                padding-left: 4vw;
+                
+            }
+            .name:hover{
+                transition: 1s;
+                font-size: 35px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                
+            
+            }
+            .options {
+                flex-direction: column;
+                left:0px;
+                top:0px;
+                width:100%;
+                height: 55vh;
+                margin-top: 7.5vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                
+            }
+            .dona-btn {
+                width:100vw;
+            }
+            .options li {
+                flex-direction: column;
+                width: 100%;  
+
+            }
+            .options li a:hover,.dona-btn a:hover{
+                width:100%;
+                border-radius: 0%;
+                
+            }
+            .drop{
+                width: 100%;
+                
+            }
+            .donation-content {
+                display: none;
+                position: absolute;
+                background-color: #686363;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                margin-top: 0px;
+                margin-right: -60px;
+            
+            }
+            
+        }
+        .dona-btn{
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+           
+        }
+        .dona-btn a{
+            width: 100%;
+            height: 100%;
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            background-color: rgb(0, 0, 0);
+            font-size: 20px;
+            text-decoration: none;
+                
+        }
+       .drop .donation-content {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+           
+        }    
+        .donation-content {
+            display: none;
+            position: absolute;
+            background-color: #686363;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: -20px;
+            margin-left: 30px;
+
+        }
+        .donation-content a {
+            float: none;
+            background-color: rgb(71, 67, 67);
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 19px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            
+        }  
+        
+        .donation-content a:hover{
+            color: black;
+            background-color: rgba(88, 81, 81, 0);
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .drop:hover .donation-content{
+            display: block;
+            
+        } 
+        .logod{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center; 
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            border: 1px solid white;
+                       
+        }
+
+
+
+        .bottom div{
+            height: 80vh;
+            width: 100vw;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+        .logo_body img{
+            height: 150px;
+            width:150px;
+            border-radius: 50%;
+            
+            /* top:11vh;
+            right: 8px;
+            position: fixed;  */
+            
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(0, 0, 0);
+
+        }
+        .mid{
+            margin-top: 8vh;
+            
+            /* width: 20px;
+            height: 200px; */
+        }
+        .bottom{
+            /* padding-top: 10vh; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 87vh;
+            width: 100vw;
+            background-image: url("https://cdn.glitch.global/e37934ec-785c-47f1-8d21-d8f9dbaa6226/wallpp1.jpg?v=1695231317546");
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+        }
+        #quote1{
+            color: white;
+            font-size: xx-large;
+
+        }
+        #quote{
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            line-height:0%;
+            color: white;
+            font-size: x-large;
+            font-weight: bold;
+            
+
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="top">
+        <nav>
+            <ul>
+                <li class="name"><span class="name1">HELPING</span> <span class="name2">HANDS</span><span class="name1">...</span></li>
+                <div class="options">
+                    <li><a class="active" href="/helping_hands" target="_self" title="">Home</a></li>
+                    <li><a class="active" href="/about" target="_self" title="Know more About us">About</a></li>
+                    <div class="drop">
+                        <p class="dona-btn" ><a class="active" class="dona-btn-a" href="/types_of_Donations" target="_self" title="Different TYPES of Donations">Types</a></p>
+                        <div class="donation-content">
+                            <a href="/food_donation"><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_food_donation.jpg?v=1694599094278" class="logod">Food Donation</a>
+                            <a href="/cloth_donation"><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_cloth_donation.webp?v=1694598842130" class="logod">Cloth Donation</a>
+                            <a href="/organ_donation"><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_organ_donation.jpg?v=1694599088134" class="logod">Organ Donation</a>
+                            <a href="/blood_donation"><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_blood_donation.jpg?v=1694596273594" class="logod">Blood Donation</a>
+                            <a href="/plasma_donation" ><img src="https://cdn.glitch.global/de4cb439-aafa-4907-8ad2-0172a98479de/logo_plasma_donation.jpg?v=1694599081633" class="logod">Plasma Donation</a>
+                            <a href="/hair_donation"><img src="https://cdn.glitch.global/37089a58-93a4-4b6a-999a-4264d8fa0dd1/logo_hair_donation2.jpg?v=1695488563831" class="logod">Hair Donation</a>
+                        </div>
+                    </div>
+                    <li><a class="active" href="/donate" target="_self" title="">Donate</a></li>
+                    <li><a class="active" href="/contact"target="_self" title="In order to Contact us">Contact</a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="mid"></div>
+    <div class="bottom">
+        <div>
+            <div id="quote"> 
+                <p>" Giving is not just about </p>
+                <p> making a donation. </p>
+                <p> It is about making  </p>
+                <p> difference... "</p>
+            </div>
+            <!-- <div class="sign_log">
+                <button >Signin</button>
+                <button >Logini</button>
+            </div> -->
+
+            <!-- <pre id="quote1">
+" Giving is not just about 
+     making a donation.
+    It is about making 
+        difference... "
+                </pre> -->
+            <p class="logo_body"><img src="https://cdn.glitch.global/489ab3e0-0c44-419a-8e60-95d6a5c28b81/logo5.jpg?v=1695490454908" alt=""  >
+        </div>
+    </div>
+    
+</body>
+</html>

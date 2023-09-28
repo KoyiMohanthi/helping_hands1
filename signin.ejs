@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.glitch.global/37089a58-93a4-4b6a-999a-4264d8fa0dd1/hello6.png?v=1695487475094" type="icon-x/image">
+    <title>Sign Up Page</title>
+    <style>
+        body{
+            display:flex;
+            flex-direction: column;        
+            align-items: center;
+            justify-content: space-evenly;
+            background-image: url("https://cdn.glitch.global/e37934ec-785c-47f1-8d21-d8f9dbaa6226/wallpp1.jpg?v=1695231317546");
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+        
+  
+        }
+        .top{
+            opacity: 0.8;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            background-color: rgba(64, 64, 64, 0.87);
+            /* border:2px solid black; */
+            border-radius: 10%;
+        }
+        .form{
+            width: 450px;
+            height: 450px;
+        
+            display:flex;
+            flex-direction: column;        
+            align-items: center;
+            justify-content: space-evenly;
+            
+        }
+        label{
+            font-size: large;
+            font-weight: bolder;
+        }
+        .f1{
+            display:flex;
+            flex-direction: row;        
+            align-items:center;
+            justify-content: space-evenly;
+            width: 380px;
+            
+        }
+        h1{
+            margin-left: 65px;
+            margin-top: 38px;
+        }
+        input{
+            width: 230px;
+            height: 23px;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+        .check{
+            margin-right: -90px;
+            
+        }
+        .logo_body img{
+            height: 120px;
+            width:120px;
+            border-radius: 50%;
+            top:11vh;
+            right: 8px;
+            position: fixed;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <h1>Signin... </h1>
+        <form action="/signinsubmit" method="POST">
+            <div class="form" >
+                <div class="f1">
+                    <label for="username">User Name  </label>
+                    <input type="text" name="username">
+                </div>
+                
+                <div class="f1">
+                    <label for="email">Mail Id  &nbsp;&nbsp;</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div class="f1">
+                    <label for="password">Password  </label>
+                    <input type="password" name="password">
+                </div>
+
+                <div>
+                    <input type="checkbox" class="check">I accept all terms & conditons
+                </div>
+                <div>
+                    <!-- <button>Submit</button> -->
+                    <button>Submit</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    <p class="logo_body"><img src="https://cdn.glitch.global/489ab3e0-0c44-419a-8e60-95d6a5c28b81/logo5.jpg?v=1695490454908" alt=""  >
+</body>
+</html>
